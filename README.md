@@ -6,10 +6,10 @@
 According to [**McAffe**](https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware.html#:~:text=Ransomware%20is%20malware%20that%20employs,a%20victim's%20information%20at%20ransom.&text=A%20ransom%20is%20then%20demanded,quickly%20paralyze%20an%20entire%20organization. "McAffe"):
 > Ransomware is malware that employs encryption to hold a victim's information at ransom. 
 
-**Simple Python Ransomare** is a simple tool built in Python that does exactly that, in under 100 lines of code. This highlights both the power of Python, but also the the ease of building such a virus.
+**Simple Python Ransomware** is a simple tool built in Python that does exactly that, in under 100 lines of code. This highlights both the power of Python, but also the the ease of building such a virus.
 
 ## Prerequisites
-**Simple Python Ransomare** is build in under 100 lines of code, mostly thanks to packages [Cryptography](https://cryptography.io/en/latest/ "cryptography") (`pip install cryptography`) && [python-dotenv](https://github.com/theskumar/python-dotenv "python-dotenv"), but also other packages (argparse, getpass, os, pathlib, smtplib, platform, email).
+**Simple Python Ransomware** is build in under 100 lines of code, mostly thanks to packages [Cryptography](https://cryptography.io/en/latest/ "cryptography") (`pip install cryptography`) && [python-dotenv](https://github.com/theskumar/python-dotenv "python-dotenv"), but also other packages (argparse, getpass, os, pathlib, smtplib, platform, email).
 
 Before you begin, ensure you have met the following requirements:
 * You have [Python 3.X.X](https://www.python.org/downloads/ "Python 3.X.X") installed
@@ -17,13 +17,13 @@ Before you begin, ensure you have met the following requirements:
 * You have read the guide from bellow
 
 ## Installing Simple Python Ransomware
-To install **Simple Python Ransomare**, follow these steps:
+To install **Simple Python Ransomware**, follow these steps:
 ```
 git clone <repo> && cd <repo-name>
 pip3 install -r requirements.txt
 ```
 ## Using Simple Python Ransomware
-**Simple Python Ransomare** is used both to encrypt and to decrypt files. Before running the script, head over to the `.env` file and update the following lines using your own information:
+**Simple Python Ransomware** is used both to encrypt and to decrypt files. Before running the script, head over to the `.env` file and update the following lines using your own information:
 ```
 gmail_account='<YOUR_GMAIL_ADDRESS>'
 gmail_password='<YOUR_GMAIL_PASSWORD>'
@@ -34,7 +34,7 @@ After saving the file, you can run the script in the **encryption mode** by typi
 python3 ransomware.py --directory <DIRECTORY_NAME> [optional] --backup [optional]
 ```
 Where:
-* `--directory` or `-d` takes as an parameter a string, which is the Location / Folder you are targeting (ie. Desktop, Downloads etc.). If letft blank, **Simple Python Ransomare** will automatically target the Desktop. For specific subirectories, specify the main directory first (ie. `python3 ransomware.py --d Downloads/Subdirectory `).
+* `--directory` or `-d` takes as an parameter a string, which is the Location / Folder you are targeting (ie. Desktop, Downloads etc.). If letft blank, **Simple Python Ransomware** will automatically target the Desktop. For specific subirectories, specify the main directory first (ie. `python3 ransomware.py --d Downloads/Subdirectory `).
 
 * `--backup` or `-b` doesn't take any parameter and is used to bypass the deletion of the cryptographic key from the system. If used, the key will be stored in the same directory as `ransomware.py`
 
@@ -52,6 +52,13 @@ python3 ransomware.py --key <YOUR_CRYPTOGHRAPHIC_KEY>
 You can retriev the cryptographic key either from the email sent before, or from the `cryptographic_key.key` file, if you used the `--backup` argument.
 
 **ATTENTION**! The directory should be also specified using the `-d `argument, provided that it was used to encrypt files in directories other that Desktop.
+
+
+[========]
+
+**IMPORTANT**: This tool is only for testing and academic purposes and can be used where strict consent has been given. Do not use it for illegal purposes! It is the end user’s responsibility to obey all applicable local, state and federal laws. I assume no liability and am not responsible for any misuse or damage caused by this tool and software in general.
+
+[========]
 
 ## Screenshots
 ##### The 'Downloads' folder before the encryption

