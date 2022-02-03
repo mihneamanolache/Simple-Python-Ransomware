@@ -19,7 +19,7 @@ Before you begin, ensure you have met the following requirements:
 ## Installing Simple Python Ransomware
 To install **Simple Python Ransomware**, follow these steps:
 ```
-git clone <repo> && cd <repo-name>
+git clone git@github.com:mihneamanolache/Simple-Python-Ransomware.git && cd Simple-Python-Ransomware
 pip3 install -r requirements.txt
 ```
 ## Using Simple Python Ransomware
