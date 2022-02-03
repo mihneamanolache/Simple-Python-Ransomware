@@ -1,4 +1,4 @@
-**WARNING**: This program can damage your files! My recommendation is to read the guides and only run it on a virtual machine ***at your own risk***. I cannot be hold responsible for any file damage due to running this file on any machine.
+**WARNING**: This program can damage your files! My recommendation is to read the guides and only run it on a virtual machine ***at your own risk***. I cannot be hold responsible for any file damage due to running this program on any machine.
 
 # Simple Python Ransomware
 ![Generic badge](https://img.shields.io/badge/Version-1.0.0-RED.svg)
