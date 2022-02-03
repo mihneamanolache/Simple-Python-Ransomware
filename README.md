@@ -2,7 +2,6 @@
 
 # Simple Python Ransomware
 ![Generic badge](https://img.shields.io/badge/Version-1.0.0-RED.svg)
-![GitHub repo size](https://img.shields.io/github/repo-size/mihneamanolache/Simple-Python-Ransomware)
 
 According to [**McAffe**](https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware.html#:~:text=Ransomware%20is%20malware%20that%20employs,a%20victim's%20information%20at%20ransom.&text=A%20ransom%20is%20then%20demanded,quickly%20paralyze%20an%20entire%20organization. "McAffe"):
 > Ransomware is malware that employs encryption to hold a victim's information at ransom. 
